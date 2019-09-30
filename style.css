@@ -1,0 +1,481 @@
+* {
+	margin: 0;
+	padding: 0;
+	outline: 0;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+body h5 {
+	font-size: 1rem;
+	font-family: Muli;
+	font-weight: 800;
+	color: white;
+	line-height: 1.5rem;
+	letter-spacing: 2px;
+	margin-bottom: 16px;
+}
+
+body h2 {
+	font-size: 2.5rem;
+	font-family: Muli;
+	font-weight: 600;
+	line-height: 3rem;
+	letter-spacing: 0.75px;
+	margin-bottom: 16px;
+}
+
+body p {
+	line-height: 1.5em;
+}
+
+.bgimage {
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 800px;
+	background-image: linear-gradient(-65deg , transparent 0%, 
+		transparent 43.5%, white 43.5%, white 100%), 
+	url(images/Nathan1.jpg);
+}
+
+.navbar-expand-sm .navbar-nav .lists .nav-link {
+	font-size: 1.25rem;
+	color: rgb(50, 50, 50);	
+	border-bottom: 2px solid transparent;
+	padding: 0.1rem;
+	margin: 0.1rem 0.85rem 0;
+	font-weight: bold;
+	letter-spacing: 0.1px;
+	text-transform: uppercase;
+}
+
+.navbar-expand-sm .navbar-nav .active .nav-link, .navbar-expand-sm .navbar-nav .lists .nav-link:hover {
+	border-bottom: 2px solid rgb(50, 50, 50);
+}
+
+.navbar-expand-sm .navbar-nav .social .nav-link {
+	font-size: 1.5rem;
+	padding: 0;
+	margin: 0 10px;
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	color: grey;
+	line-height: 0.87;
+}
+
+i.fa.fa-facebook-official:hover {
+	color: rgb(59, 89, 152);
+	background-color: white;
+	line-height: 0.87;
+}
+
+i.fa.fa-instagram:hover {
+	background-image: linear-gradient(to bottom right, rgb(64,93,230), rgb(131,58,180), rgb(193,53,132),
+		rgb(225,48,108), rgb(252,175,69), rgb(255,220,128));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	line-height: 0.87;
+}
+
+i.fa.fa-linkedin-square:hover  {
+	color: rgba(0,119,171, 100%);
+	background-color: white;
+	line-height: 0.87;
+	border-radius: 3px;
+}
+
+.description {
+	padding: 9.35% 0;
+	width: 94%;
+}
+
+.description h1 {
+	font-family: 'Playfair Display', serif;
+	font-weight: 900;
+	font-size: 5em;
+	letter-spacing: 1px;
+	line-height: 110%;
+}
+
+.description h2 {
+	font-family: 'Playfair Display', serif;
+	font-weight: 900;
+	font-size: 4em;
+	letter-spacing: 1px;
+	line-height: 110%;
+	margin-bottom: 15px;
+}
+
+.description p {
+	font-size: 1.5em;
+	margin-bottom: 0px;
+	line-height: 140%;
+	font-family: Khula;
+	font-weight: 300;
+	text-align: left;
+	width: 60%;
+	word-break: break-word;
+}
+
+.description .btn {
+	min-width: 10rem;
+	background-color: black;
+	color: rgb(240, 240, 240);
+	padding: 1rem 3.25rem;
+	border-radius: 0;
+}
+
+.description .btn a {
+	font-size: .85rem;
+	font-weight: 600;
+	font-family: Open Sans;
+	color: white;
+	letter-spacing: 1px;
+	text-align: center;
+	user-select: none;
+	animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+	from {
+		text-shadow: 0 0 1px green, 0 0 2px green, 0 0 3px green, 0 0 4px green, 0 0 5px green;
+	}
+	to {
+		text-shadow: 0 0 1px blue, 0 0 2px blue, 0 0 3px blue, 0 0 4px blue, 0 0 5px blue;
+	}
+}
+
+.overlappable {
+	background-color: black;
+	padding-top: 0;
+	padding-bottom: 2.5rem;
+	text-align: left;
+}
+
+.overlappable .container {
+	background-color: transparent;
+	width: 90%;
+}
+
+.margan {
+	margin-bottom: -30px;
+	text-align: center;
+}
+
+.col-padding {
+	padding: 2rem;
+	margin-top: -90px;
+}
+
+.icontag {
+	font-size: 3.5rem;
+	border-radius: 100%;
+	padding: .5rem;
+	color: white;
+	background-color: rgb(25, 75, 50);
+	width: 2.1em;
+	height: 2.1em;
+	line-height: 1.75em;
+	text-align: center;
+	vertical-align: middle;
+	margin-bottom: 30px;
+}
+
+.icontag:hover {
+	box-shadow: 0 10px 30px rgba(0,0,0,.7);
+}
+
+.paragraph h5 {
+	margin-bottom: 20px;
+}
+
+.paragraph p {
+	font-size: 1rem;
+	color: white;
+	font-family: Open Sans;
+	word-wrap: break-word;
+	font-weight: 600;
+	margin-bottom: 30px;
+}
+
+.aboutme {
+	background-color: black;
+	padding-top: 0;
+	padding-bottom: 2.5rem;
+	text-align: left;
+}
+
+.aboutme .about {
+	padding: 6rem 9%;
+	background-color: rgb(25, 75, 50);
+	color: white;
+}
+
+.aboutme .about h2 {
+	font-family: Muli;
+	font-weight: 600;
+	word-wrap: break-word;
+}
+
+.aboutme .about p {
+	text-align: left;
+	font-size: 16px;
+}
+
+.portfolio {
+	padding-top: 160px;
+    padding-bottom: 80px;
+    position: relative;
+    background-color: white;
+}
+
+.portfolio svg {
+	transform: rotateX(180deg);
+	position: absolute;
+	top: -1px;
+	left: 0;
+	height: 10%;
+	width: 105%;
+	overflow: hidden;
+}
+
+.portfolio p {
+	font-size: 1.2rem;
+	color: rgb(60, 60, 60);
+	line-height: 2rem;
+	margin-bottom: 2rem;
+	font-family: Open Sans;
+	font-weight: 300;
+}
+
+.project {
+	margin: 0;
+	margin-bottom: 30px;
+	width: 100%;
+	position: relative;
+}
+
+.imagebox {
+	overflow: hidden;
+	width: 350px;
+	height: 350px;
+	clear: both;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.imagebox img {
+	transform: scale(1);
+	transition: all .3s linear;
+}
+
+.imagebox:hover img {
+	transform: scale(1.25);
+}
+
+.transition {
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, .54) 78%, rgba(0, 0, 0, .8) 100%);
+	position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.transition h4 {
+	color: white;
+	opacity: 0.8;
+	font-weight: 500;
+	font-size: 1.1rem;
+	line-height: 1.75rem;
+	letter-spacing: 0.625rem;
+	font-family: Muli;
+}
+
+.transition a {
+	color: white;
+    display: inline-block;
+    opacity: 0.9;
+    transition: all .1s linear;
+    font-size: 1rem;
+    line-height: 1rem;
+    font-style: italic;
+    margin-bottom: 16px;
+}
+
+.services {
+	background-color: black;
+	position: relative;
+    padding-top: 130px;
+    padding-bottom: 80px;
+}
+
+.services svg {
+	transform: rotateX(180deg);
+	position: absolute;
+	top: -1px;
+	height: 10%;
+	width: 105%;
+	fill: white;
+}
+
+.services h2 {
+	color: white;
+}
+
+.services p {
+	font-size: 1.2rem;
+	color: white;
+	line-height: 2rem;
+	margin-bottom: 2rem;
+	font-family: Open Sans;
+	font-weight: 300;
+}
+
+.card {
+	padding: 35px 30px;
+	border-radius: 0;
+	margin-bottom: 30px;
+}
+
+.icon-col {
+    max-width: 100%;
+    text-align: center;
+    padding: 1.5rem;
+    border-radius: 100%;
+	background-color: rgb(25, 75, 50);
+	height: 10%;
+}
+
+.icon {
+	color: white;
+	font-size: 1.8rem;
+    text-align: center;
+}
+
+.card p {
+	color: rgb(10, 10, 10);
+	text-align: left;
+	font-size: 16px;
+	line-height: 1.5rem;
+	margin: 0;
+}
+
+.card h5 {
+	color: rgb(25, 75, 50);
+	text-align: left;
+	text-transform: uppercase;
+	margin-bottom: 10px;
+}
+
+.hireme {
+	background-color: rgb(25, 75, 50);
+    background-image: none;
+    padding: 45px 0;
+}
+
+.hireme h2 {
+	color: white;
+}
+
+.hireme .btn {
+	min-width: 10rem;
+	background-color: transparent;
+	border: 2px solid white;
+	color: rgb(240, 240, 240);
+	padding: 1rem 3.25rem;
+	border-radius: 5px;
+}
+
+.hireme .btn a {
+	font-size: .85rem;
+	font-weight: 600;
+	font-family: Open Sans;
+	color: white;
+	letter-spacing: 1px;
+	text-align: center;
+	user-select: none;
+}
+
+.testimonials {
+	background-color: white;
+	padding: 80px 0;
+}
+
+.testimonials p {
+	font-size: 1.2rem;
+	color: rgb(60, 60, 60);
+	line-height: 2rem;
+	font-family: Open Sans;
+	font-weight: 300;
+	margin-bottom: 2rem;
+}
+
+.testimonials .icon {
+	color: rgb(3, 169, 244);
+}
+
+.testimonials .card p {
+	font-size: 16px;
+	margin-top: .25rem;
+	margin-bottom: 1rem;
+	font-family: Helvetica;
+	line-height: 1.5rem;
+	color: rgb(107, 124, 147);
+}
+
+.testimonials img {
+	border-radius: 100%;
+	width: 6rem;
+	height: 6rem;
+	margin: 0 auto;
+}
+
+.testimonials h6 {
+	margin: .75rem 0;
+	font-family: Muli;
+	font-weight: bold;
+	letter-spacing: 0.15rem;
+}
+
+.testimonials p i {
+	letter-spacing: 0.5px;
+	margin: 0;
+}
+
+.testimonials .card {
+	transition: all .2s;
+	padding: 24px 40px;
+}
+
+.testimonials .card:hover {
+	box-shadow: 0px 0px 15px 1px lightgrey,
+	0px 2px 13px 0px lightgrey;
+}
+
+.contact {
+	background-color: black;
+	position: relative;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.contact svg {
+	position: absolute;
+	top: -1px;
+	height: 15%;
+	width: 130%;
+	fill: white;
+}
+
+.contact h2, .contact p {
+	margin: 0;
+	line-height: 1.5em;
+}
+
+.contact p {
+	font-size: 1.2em;
+}
