@@ -1,4 +1,6 @@
-# AksharGoyal.github.io
+AksharGoyal.github.io
+
+
 Project Website:
 This website is for my friend and I made it myself with some inspiration from memerise.
 Hope you enjoy the look.
