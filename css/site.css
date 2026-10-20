@@ -119,3 +119,54 @@ nav a[aria-current="page"] {
   color: var(--color-bg);
   background: var(--color-text);
 }
+
+/* Home */
+.hero {
+  padding-block: var(--space-6) var(--space-5);
+}
+
+.hero h1 {
+  margin-block: 0 var(--space-3);
+  font-size: var(--text-3xl);
+}
+
+.tagline {
+  margin: 0 0 var(--space-2);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.intro {
+  margin: 0;
+  font-size: var(--text-lg);
+  color: var(--color-muted);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: var(--space-4) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.links a {
+  display: inline-block;
+  padding: var(--space-2) var(--space-3);
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid currentColor;
+  border-radius: var(--radius);
+}
+
+.links a:hover {
+  color: var(--color-bg);
+  background: var(--color-link);
+  border-color: var(--color-link);
+}
+
+.about {
+  padding-block: var(--space-4) var(--space-6);
+}
