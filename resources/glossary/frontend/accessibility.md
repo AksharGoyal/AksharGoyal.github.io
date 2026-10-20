@@ -47,3 +47,6 @@
 
 - **`aria-current`** — attribute marking which item in a set is the current one, e.g. `aria-current="page"` on the nav link for the page you are on. Screen readers announce "current page"; CSS can style it with `[aria-current="page"]`. Other values: `step`, `location`, `date`, `time`, `true`.
   **Seen in:** DevTools → Elements on GitHub's repo tabs. The active tab carries `aria-current="page"`.
+
+- **Skip link** — the first focusable link on a page, usually "Skip to content", that jumps keyboard and screen-reader users past repeated navigation. It is hidden until it receives focus. Hide it by moving it off-screen, never with `display: none`, which removes it from the tab order.
+  **Seen in:** press Tab once on github.com or gov.uk.

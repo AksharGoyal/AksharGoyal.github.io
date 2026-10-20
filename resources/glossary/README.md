@@ -3,6 +3,7 @@
 Short definitions of web development terms. Each entry has a definition and a **Seen in:** note pointing to somewhere you can go and look at the thing yourself.
 
 ## Frontend
+
 - [Accessibility](frontend/accessibility.md)
 - [CSS](frontend/css.md)
 - [HTML](frontend/html.md)
@@ -12,7 +13,18 @@ Short definitions of web development terms. Each entry has a definition and a **
 - [SEO](frontend/seo.md)
 
 ## Networking
+
 - [Networking](networking/networking.md)
 
 ## Security
+
 - [Auth and web security](security/auth-and-web-security.md)
+- [Dependencies and compliance](security/dependencies-and-compliance.md)
+
+## Data engineering
+
+- [Message queues](data-engineering/message-queues.md)
+
+## Engineering
+
+- [Engineering practices](engineering/practices.md)
