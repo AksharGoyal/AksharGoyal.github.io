@@ -1,8 +1,10 @@
 # macOS
 .DS_Store
 
-# Private AI-assistant config
+# Private AI-assistant config and practice notes (never committed)
 CLAUDE.local.md
+LEARNING_LOG.md
+ROTATION.md
 .claude/
 
 # Editor and OS clutter
