@@ -14,3 +14,9 @@
 
 - **Logical properties (`padding-block`, `margin-inline`)** — spacing properties named by text flow instead of screen direction. `block` is the direction lines stack (top and bottom in English), `inline` is the direction text runs (left and right in English). In right-to-left or vertical writing modes they flip automatically. `padding-block: 1rem` sets both block edges; `padding-inline` sets both inline edges.
   **Seen in:** DevTools → Elements → Computed. Set `direction: rtl` on `<html>` and watch `margin-inline-start` move to the other side.
+
+- **Cascade and specificity** — the rules for choosing which CSS declaration wins when several target one element: importance, then specificity (an ID beats a class, attribute or pseudo-class, which beats an element), then source order, where the later rule wins a tie. Keep selectors low in specificity so overrides stay predictable.
+  **Seen in:** DevTools → Elements → Styles. Overridden declarations appear struck through, with the winning rule above them.
+
+- **Custom property inheritance** — custom properties inherit down the tree like `color` does. If a dark-mode block omits one, the element keeps the value from the outer scope instead of falling back to a browser default, so every theme token needs an override.
+  **Seen in:** DevTools → Computed. Toggle `prefers-color-scheme` and watch which variables change.
