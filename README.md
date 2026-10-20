@@ -3,7 +3,7 @@
 Personal portfolio: who I am, the data engineering work I have done, and the projects I am building.
 
 - **Status:** In progress
-- **Site:** https://AksharGoyal.github.io (not yet published)
+- **Site:** https://akshargoyal.github.io (not yet published)
 
 ## Approach
 
@@ -26,14 +26,20 @@ but root-relative links such as `/work/` will not resolve over `file://`.
 
 ```
 index.html      Home
-work/           Case studies
-projects/       Projects (building now)
-contact/        Contact links
-css/            Styles
-assets/         Images and the resume PDF
+work/           Featured work
+projects/       Projects
+contact/        Contact links (planned)
+css/            Design tokens and styles
+assets/         Images
+resources/      Learning notes and a glossary
 ```
 
-Only `index.html` exists so far. The rest is planned.
+## Resources
+
+`resources/` holds a glossary of software and data engineering terms, grouped by
+topic (frontend, networking, security, data engineering and engineering
+practices), and a list of frontend learning resources. Start at
+[`resources/glossary/README.md`](resources/glossary/README.md).
 
 ## Standards
 
