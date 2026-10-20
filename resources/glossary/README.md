@@ -4,6 +4,7 @@ Short definitions of web development terms. Each entry has a definition and a **
 
 ## Frontend
 - [Accessibility](frontend/accessibility.md)
+- [CSS](frontend/css.md)
 - [HTML](frontend/html.md)
 - [Naming conventions](frontend/naming-conventions.md)
 - [Performance](frontend/performance.md)
