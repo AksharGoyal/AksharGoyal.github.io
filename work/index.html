@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Document basics -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Work - Akshar Goyal</title>
+    <meta
+      name="description"
+      content="Case studies from Akshar Goyal's data engineering work, written for readers outside the team."
+    />
+
+    <!-- Search engines -->
+    <link rel="canonical" href="https://akshargoyal.github.io/work/" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Link previews: Open Graph (LinkedIn, Slack, iMessage) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Akshar Goyal" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="Work - Akshar Goyal" />
+    <meta
+      property="og:description"
+      content="Case studies from Akshar Goyal's data engineering work, written for readers outside the team."
+    />
+    <meta property="og:url" content="https://akshargoyal.github.io/work/" />
+
+    <!-- Link previews: X (Twitter) -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@AksharGoyal" />
+    <meta name="twitter:creator" content="@AksharGoyal" />
+    <meta name="twitter:title" content="Work - Akshar Goyal" />
+    <meta
+      name="twitter:description"
+      content="Case studies from Akshar Goyal's data engineering work, written for readers outside the team."
+    />
+
+    <!-- Icon and browser theme -->
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      name="theme-color"
+      content="#FFF1E6"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#14213D"
+      media="(prefers-color-scheme: dark)"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/tokens.css" />
+    <link rel="stylesheet" href="/css/site.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header>
+      <a class="site-name" href="/">Akshar Goyal</a>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/work/" aria-current="page">Work</a></li>
+          <li><a href="/projects/">Projects</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main">
+      <h1>Work</h1>
+      <p>Selected projects from my data engineering work.</p>
+
+      <article>
+        <h2>RabbitMQ &amp; Inventory backlog</h2>
+        <h3>Problem</h3>
+        <p>
+          Shoppers browsing a mall's products rely on the "In Stock" badge being
+          real-time and accurate. Behind it, stock updates waited in a message
+          queue that was falling behind: it processed about 0.2 messages a
+          second, old messages never expired, and the backlog grew every week.
+          In-stock badges went stale, which lowered shopper trust.
+        </p>
+        <h3>What I did</h3>
+        <p>
+          I traced the backlog to several causes and fixed each one. I switched
+          the service to push-based delivery, so it receives work as soon as it
+          arrives instead of repeatedly asking for it, and limited how many
+          messages are processed at once. I made sure every store's queue always
+          has a consumer, added message expiry so stale messages are dropped,
+          and cached a repeated status check to save resources.
+        </p>
+        <h3>Result</h3>
+        <p>
+          Healthy queues now process at least 5 messages a second, about 25
+          times faster. The backlog dropped from weeks to days, and inventory
+          updates now stay close to real time.
+        </p>
+      </article>
+    </main>
+    <footer><p>© 2026 Akshar Goyal</p></footer>
+  </body>
+</html>
