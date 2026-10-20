@@ -8,3 +8,6 @@
 
 - **JSON-LD structured data** — schema.org JSON in a `<script type="application/ld+json">`.
   **Seen in:** recipe sites (that's why Google shows star ratings and cook time). Test with Google's Rich Results Test.
+
+- **Twitter/X card tags** — `<meta name="twitter:card" content="summary">` selects the X card style (`summary` or `summary_large_image`). `twitter:title`, `twitter:description` and `twitter:image` fall back to the Open Graph values when absent. Uses `name=`.
+  **Seen in:** view-source on a GitHub repo page and search for `twitter:`.
