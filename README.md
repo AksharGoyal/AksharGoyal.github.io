@@ -13,7 +13,14 @@ tests and CI will be added as the site grows.
 
 ## Run locally
 
-Open `index.html` in a browser. No install is needed.
+Serve the folder with any static server, for example:
+
+```bash
+python3 -m http.server 8000
+```
+
+Then open http://localhost:8000. Opening `index.html` directly also works,
+but root-relative links such as `/work/` will not resolve over `file://`.
 
 ## Structure
 
