@@ -3,6 +3,7 @@
 
   /* Colour (light: dawn) */
   --color-bg: #fff1e6;
+  --color-bg-dusk: #fbe4e4;
   --color-text: #14213d;
   --color-muted: #46506b;
   --color-link: #b4442a;
@@ -25,6 +26,7 @@
   --text-3xl: clamp(2.5rem, 1.8rem + 3.5vw, 4rem);
 
   /* Layout */
+  --page-width: 64rem;
   --measure: 65ch;
   --radius: 0.5rem;
 }
@@ -32,7 +34,8 @@
 @media (prefers-color-scheme: dark) {
   :root {
     /* Colour (dark: dusk) */
-    --color-bg: #14213d;
+    --color-bg: #1e2150;
+    --color-bg-dusk: #14213d;
     --color-text: #fff1e6;
     --color-muted: #c3cbe0;
     --color-link: #ffb38a;

@@ -26,7 +26,7 @@ but root-relative links such as `/experience/` will not resolve over `file://`.
 
 ```
 index.html      Home
-experience/     Experience timeline and featured work
+experience/     Experience timeline
 projects/       Projects
 contact/        Contact links
 css/            Design tokens and styles
