@@ -50,3 +50,6 @@
 
 - **Skip link** — the first focusable link on a page, usually "Skip to content", that jumps keyboard and screen-reader users past repeated navigation. It is hidden until it receives focus. Hide it by moving it off-screen, never with `display: none`, which removes it from the tab order.
   **Seen in:** press Tab once on github.com or gov.uk.
+
+- **Flashing and seizure safety (WCAG 2.3.1)** — content must not flash more than three times in any one second, unless the flashes are small and low in contrast. Rapid flicker can trigger seizures. Keep glitch and flicker effects short, small and occasional, and switch them off when `prefers-reduced-motion: reduce` is set.
+  **Seen in:** WCAG 2.3.1 "Three Flashes or Below Threshold". The PEAT tool checks videos against it.

@@ -13,6 +13,7 @@ Short definitions of software and data engineering terms. Each entry has a defin
 ## Frontend
 
 - [Accessibility](frontend/accessibility.md)
+- [Browser support](frontend/browser-support.md)
 - [CSS](frontend/css.md)
 - [HTML](frontend/html.md)
 - [Naming conventions](frontend/naming-conventions.md)
