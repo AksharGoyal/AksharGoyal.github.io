@@ -204,6 +204,89 @@ nav a[aria-current="page"] {
   padding-block: var(--space-4) var(--space-6);
 }
 
+.hero h1 {
+  position: relative;
+  isolation: isolate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero h1 {
+    text-shadow:
+      -2px -1px 0 var(--color-glitch),
+      2px 1px 0 var(--color-link);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero h1::before,
+  .hero h1::after {
+    content: attr(data-text) / "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .hero h1::before {
+    color: var(--color-glitch);
+    animation: glitch-a 4.7s -3s steps(1) infinite;
+  }
+
+  .hero h1::after {
+    color: var(--color-link);
+    animation: glitch-b 7.3s -4s steps(1) infinite;
+  }
+
+  @keyframes glitch-a {
+    0%,
+    86%,
+    100% {
+      opacity: 0;
+    }
+    87% {
+      opacity: 1;
+      transform: translate(-3px, -2px);
+    }
+    90% {
+      transform: translate(3px, 2px);
+    }
+    93% {
+      transform: translate(-4px, 1px);
+    }
+    96% {
+      transform: translate(2px, -3px);
+    }
+    98% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes glitch-b {
+    0%,
+    86%,
+    100% {
+      opacity: 0;
+    }
+    87% {
+      opacity: 1;
+      transform: translate(3px, 2px);
+    }
+    89% {
+      transform: translate(-3px, -2px);
+    }
+    91% {
+      transform: translate(4px, -1px);
+    }
+    93% {
+      transform: translate(-2px, 3px);
+    }
+    94.5% {
+      opacity: 0;
+    }
+  }
+}
+
 /* Experience */
 .timeline {
   position: relative;
