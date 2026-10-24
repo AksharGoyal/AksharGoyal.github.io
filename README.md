@@ -20,15 +20,15 @@ python3 -m http.server 8000
 ```
 
 Then open http://localhost:8000. Opening `index.html` directly also works,
-but root-relative links such as `/work/` will not resolve over `file://`.
+but root-relative links such as `/experience/` will not resolve over `file://`.
 
 ## Structure
 
 ```
 index.html      Home
-work/           Featured work
+experience/     Experience timeline and featured work
 projects/       Projects
-contact/        Contact links (planned)
+contact/        Contact links
 css/            Design tokens and styles
 assets/         Images
 resources/      Learning notes and a glossary
