@@ -5,6 +5,34 @@
   box-sizing: border-box;
 }
 
+/* Dawn to dusk: the page background drifts as you scroll */
+@property --dusk {
+  syntax: "<percentage>";
+  inherits: true;
+  initial-value: 0%;
+}
+
+:root {
+  --surface: color-mix(
+    in srgb,
+    var(--color-bg),
+    var(--color-bg-dusk) var(--dusk)
+  );
+}
+
+@supports (animation-timeline: scroll()) {
+  :root {
+    animation: dusk linear both;
+    animation-timeline: scroll(root);
+  }
+}
+
+@keyframes dusk {
+  to {
+    --dusk: 100%;
+  }
+}
+
 /* Base elements */
 body {
   margin: 0;
@@ -12,7 +40,7 @@ body {
   font-size: var(--text-base);
   line-height: 1.6;
   color: var(--color-text);
-  background: var(--color-bg);
+  background: var(--surface, var(--color-bg));
 }
 
 h1 {
@@ -34,9 +62,14 @@ a:focus-visible {
 header,
 main,
 footer {
-  max-width: var(--measure);
+  max-width: var(--page-width, 64rem);
   margin-inline: auto;
   padding-inline: var(--space-3);
+}
+
+main p,
+.timeline ul li {
+  max-width: var(--measure);
 }
 
 header {
@@ -173,10 +206,20 @@ nav a[aria-current="page"] {
 
 /* Experience */
 .timeline {
+  position: relative;
   margin: var(--space-4) 0 var(--space-6);
   padding: 0 0 0 var(--space-4);
   list-style: none;
-  border-left: 2px solid var(--color-muted);
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  left: 0;
+  width: 2px;
+  background: var(--color-muted);
+  transform-origin: top;
 }
 
 .timeline > li {
@@ -191,17 +234,23 @@ nav a[aria-current="page"] {
 .timeline > li::before {
   content: "";
   position: absolute;
-  top: 0.45em;
-  left: calc(-1 * (var(--space-4) + 7px));
-  width: 12px;
-  height: 12px;
-  background: var(--color-link);
-  border: 2px solid var(--color-bg);
+  top: 0.4em;
+  left: calc(-1 * (var(--space-4) + 6px));
+  width: 14px;
+  height: 14px;
+  background: var(--surface, var(--color-bg));
+  border: 3px solid var(--color-link);
   border-radius: 50%;
+  box-shadow: 0 0 0 4px var(--surface, var(--color-bg));
+}
+
+.timeline > li:first-child::before {
+  background: var(--color-link);
 }
 
 .timeline h3 {
   margin: 0;
+  font-size: var(--text-lg);
 }
 
 .timeline .meta {
@@ -212,9 +261,135 @@ nav a[aria-current="page"] {
 
 .timeline ul {
   margin: 0;
-  padding-inline-start: var(--space-4);
+  padding: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  list-style: none;
+}
+
+.timeline ul li {
+  position: relative;
 }
 
 .timeline ul li + li {
-  margin-block-start: var(--space-2);
+  margin-block-start: var(--space-3);
+}
+
+.timeline ul li::before {
+  content: "";
+  position: absolute;
+  top: 0.75em;
+  left: calc(-1 * var(--space-4));
+  width: var(--space-3);
+  border-top: 2px solid var(--color-muted);
+  transform-origin: left;
+}
+
+@media (min-width: 40rem) {
+  .timeline {
+    padding: 0;
+  }
+
+  .timeline::before {
+    left: calc(9rem + var(--space-6) / 2 - 1px);
+  }
+
+  .timeline > li {
+    display: grid;
+    grid-template-columns: 9rem 1fr;
+    grid-template-areas:
+      "meta title"
+      "meta list";
+    column-gap: var(--space-6);
+    align-items: start;
+  }
+
+  .timeline > li::before {
+    left: calc(9rem + var(--space-6) / 2 - 8px);
+  }
+
+  .timeline h3 {
+    grid-area: title;
+  }
+
+  .timeline .meta {
+    grid-area: meta;
+    margin: 0.3em 0 0;
+    text-align: right;
+  }
+
+  .timeline ul {
+    grid-area: list;
+    margin-block-start: var(--space-3);
+  }
+
+  .timeline ul li::before {
+    left: calc(-1 * var(--space-6) / 2);
+    width: calc(var(--space-6) / 2 - var(--space-2));
+  }
+}
+
+@media (hover: hover) {
+  .timeline:hover > li:not(:hover) > :is(h3, .meta, ul),
+  .timeline:hover > li:not(:hover)::before {
+    opacity: 0.6;
+  }
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .timeline > li > :is(h3, .meta, ul),
+  .timeline > li::before {
+    transition: opacity 200ms ease;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .timeline::before {
+      animation: timeline-draw linear both;
+      animation-timeline: view();
+      animation-range: cover 0% cover 65%;
+    }
+
+    .timeline > li {
+      animation: timeline-reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 55%;
+    }
+
+    .timeline ul li::before {
+      animation: timeline-branch linear both;
+      animation-timeline: view();
+      animation-range: entry 10% entry 70%;
+    }
+  }
+
+  @keyframes timeline-draw {
+    from {
+      transform: scaleY(0);
+    }
+    to {
+      transform: scaleY(1);
+    }
+  }
+
+  @keyframes timeline-reveal {
+    from {
+      opacity: 0;
+      transform: translateY(var(--space-4));
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @keyframes timeline-branch {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
 }

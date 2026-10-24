@@ -48,7 +48,7 @@
     />
     <meta
       name="theme-color"
-      content="#14213D"
+      content="#1E2150"
       media="(prefers-color-scheme: dark)"
     />
 
@@ -90,7 +90,7 @@
                 Fixed out-of-date stock data by redesigning how our message
                 queue (RabbitMQ) delivers work, so messages are pushed to
                 workers as they arrive and old ones expire, raising throughput
-                from about 0.2 to at least 5 messages a second.
+                from about 0.2 to at least 5-10 messages a second.
               </li>
               <li>
                 Cut monitoring alerts from 100+ to an average of 3 firing alerts
@@ -165,13 +165,6 @@
             </ul>
           </li>
           <li>
-            <h3>Customer Care Agent (Intern)</h3>
-            <p class="meta">
-              Abbott · <time datetime="2022-09">Sep 2022</time> –
-              <time datetime="2022-11">Nov 2022</time>
-            </p>
-          </li>
-          <li>
             <h3>Salesforce Effectiveness and Data Analyst (Co-op)</h3>
             <p class="meta">
               Abbott · <time datetime="2022-05">May 2022</time> –
@@ -208,36 +201,6 @@
           University of Waterloo, with distinction.
           <time datetime="2022-12">Dec 2022</time>.
         </p>
-      </section>
-
-      <section aria-labelledby="featured">
-        <h2 id="featured">Featured work</h2>
-        <article>
-          <h3>RabbitMQ &amp; Inventory backlog</h3>
-          <h4>Problem</h4>
-          <p>
-            Shoppers browsing a mall's products rely on the "In Stock" badge
-            being real-time and accurate. Behind it, stock updates waited in a
-            message queue that was falling behind: messages arrived faster than
-            they were processed, old messages never expired, and the backlog
-            kept growing. In-stock badges went stale, which lowered shopper
-            trust.
-          </p>
-          <h4>What I did</h4>
-          <p>
-            I traced the backlog to several causes and fixed each one. I
-            switched the service to push-based delivery, so it receives work as
-            soon as it arrives instead of repeatedly asking for it, and limited
-            how many messages are processed at once. I made sure every store's
-            queue always has a consumer, added message expiry so stale messages
-            are dropped, and cached a repeated status check to save resources.
-          </p>
-          <h4>Result</h4>
-          <p>
-            Processing is now many times faster, the backlog drains instead of
-            growing, and inventory updates stay close to real time.
-          </p>
-        </article>
       </section>
     </main>
     <footer><p>© 2026 Akshar Goyal</p></footer>
