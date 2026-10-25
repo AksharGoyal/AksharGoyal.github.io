@@ -3,7 +3,6 @@
 
 # Private AI-assistant config and practice notes (never committed)
 CLAUDE.local.md
-LEARNING_LOG.md
 ROTATION.md
 .claude/
 
@@ -24,3 +23,5 @@ test-results/
 
 # Unprocessed originals (photos etc.); commit only optimized copies
 originals/
+
+.venv
