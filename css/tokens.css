@@ -2,12 +2,22 @@
   color-scheme: light dark;
 
   /* Colour (light: dawn) */
-  --color-bg: #fff1e6;
-  --color-bg-dusk: #fbe4e4;
+  --color-bg: #fbe7d9;
   --color-text: #14213d;
+  --color-heading: #14213d;
   --color-muted: #46506b;
-  --color-link: #b4442a;
-  --color-glitch: #2a6f97;
+  --color-link: #9a3412;
+  --color-accent: #2a6f97;
+  --glow-1: #f3a98b;
+  --glow-2: #9ec5e8;
+  --glow-3: #e3b5d9;
+  --glow-4: #a8dcc4;
+  --glow-5: #f2d28b;
+  --glow-6: #c3b1e8;
+  --glow-alpha: 0.26;
+  --brand-linkedin: #0a66c2;
+  --brand-github: #181717;
+  --brand-twitter: #1d9bf0;
 
   /* Spacing */
   --space-1: 0.25rem;
@@ -18,28 +28,44 @@
   --space-6: 3rem;
 
   /* Type */
-  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --text-sm: 0.875rem;
-  --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --font-mono:
+    "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --text-sm: 0.8125rem;
+  --text-md: 1rem;
+  --text-base: clamp(0.9375rem, 0.9rem + 0.2vw, 1.0625rem);
   --text-lg: clamp(1.125rem, 1.05rem + 0.4vw, 1.375rem);
-  --text-xl: clamp(1.375rem, 1.2rem + 0.9vw, 1.875rem);
-  --text-2xl: clamp(1.75rem, 1.4rem + 1.8vw, 2.75rem);
   --text-3xl: clamp(2.5rem, 1.8rem + 3.5vw, 4rem);
 
   /* Layout */
-  --page-width: 64rem;
+  --page-width: 72rem;
+  --sidebar-width: 20rem;
   --measure: 65ch;
   --radius: 0.5rem;
+  --radius-pill: 999px;
+  --line-width: 2px;
+  --dot-size: 14px;
+  --timeline-date-width: 10rem;
+  --tracking-wide: 0.12em;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     /* Colour (dark: dusk) */
-    --color-bg: #1e2150;
-    --color-bg-dusk: #14213d;
-    --color-text: #fff1e6;
-    --color-muted: #c3cbe0;
+    --color-bg: #171a42;
+    --color-text: #cdd4ee;
+    --color-heading: #d8def4;
+    --color-muted: #aab5d8;
     --color-link: #ffb38a;
-    --color-glitch: #7fb7e6;
+    --color-accent: #7fb7e6;
+    --glow-1: #8a3d2e;
+    --glow-2: #2f4fa8;
+    --glow-3: #5b3a9a;
+    --glow-4: #17595f;
+    --glow-5: #7d2a63;
+    --glow-6: #3a3f9e;
+    --glow-alpha: 0.45;
+    --brand-linkedin: #0a66c2;
+    --brand-github: #f0f6fc;
+    --brand-twitter: #4db5f5;
   }
 }

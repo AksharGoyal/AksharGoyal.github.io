@@ -4,7 +4,7 @@
     <!-- Document basics -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Akshar Goyal - Data Engineer</title>
+    <title>Akshar Goyal - Data and Software Engineer</title>
     <meta
       name="description"
       content="Portfolio of Akshar Goyal, a data and software engineer with hands-on experience building ML and AI projects."
@@ -18,106 +18,413 @@
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Akshar Goyal" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:title" content="Akshar Goyal - Data Engineer" />
+    <meta
+      property="og:title"
+      content="Akshar Goyal - Data and Software Engineer"
+    />
     <meta
       property="og:description"
       content="Portfolio of Akshar Goyal, a data and software engineer with hands-on experience building ML and AI projects."
     />
     <meta property="og:url" content="https://akshargoyal.github.io/" />
-    <!-- <meta
-      property="og:image"
-      content="https://akshargoyal.github.io/assets/og-image.png"
-    />
-    <meta property="og:image:alt" content="Akshar Goyal" /> -->
 
     <!-- Link previews: X (Twitter) -->
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@AksharGoyal" />
     <meta name="twitter:creator" content="@AksharGoyal" />
-    <meta name="twitter:title" content="Akshar Goyal - Data Engineer" />
+    <meta
+      name="twitter:title"
+      content="Akshar Goyal - Data and Software Engineer"
+    />
     <meta
       name="twitter:description"
       content="Portfolio of Akshar Goyal, a data and software engineer with hands-on experience building ML and AI projects."
     />
 
     <!-- Icon and browser theme -->
-    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <meta name="color-scheme" content="light dark" />
     <meta
       name="theme-color"
-      content="#FFF1E6"
+      content="#FBE7D9"
       media="(prefers-color-scheme: light)"
     />
     <meta
       name="theme-color"
-      content="#1E2150"
+      content="#171A42"
       media="(prefers-color-scheme: dark)"
     />
 
     <!-- Styles -->
-    <link rel="stylesheet" href="/css/tokens.css" />
-    <link rel="stylesheet" href="/css/site.css" />
+    <link
+      rel="preload"
+      href="assets/fonts/jetbrains-mono-variable.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/site.css" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
-    <header>
-      <a class="site-name" href="/">Akshar Goyal</a>
-      <nav aria-label="Main">
-        <ul>
-          <li><a href="/" aria-current="page">Home</a></li>
-          <li><a href="/experience/">Experience</a></li>
-          <li><a href="/projects/">Projects</a></li>
-          <li><a href="/contact/">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main id="main">
-      <div class="hero">
-        <h1 data-text="Akshar Goyal">Akshar Goyal</h1>
-        <p class="tagline">Web scraping, data pipelines and monitoring.</p>
-        <p class="intro">
-          Data and software engineer with hands-on experience building ML and AI
-          projects.
-        </p>
-        <ul class="links">
+
+    <div class="glow" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <svg hidden width="0" height="0" aria-hidden="true">
+      <symbol id="icon-linkedin" viewBox="0 0 24 24">
+        <path
+          d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.125 2.062 2.062 0 0 1 0 4.125zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+        />
+      </symbol>
+      <symbol id="icon-github" viewBox="0 0 24 24">
+        <path
+          d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+        />
+      </symbol>
+      <symbol id="icon-twitter" viewBox="0 0 24 24">
+        <path
+          d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
+        />
+      </symbol>
+    </svg>
+
+    <div class="layout">
+      <header class="sidebar">
+        <div>
+          <h1 data-text="Akshar Goyal">Akshar Goyal</h1>
+          <p class="tagline">
+            <span>Web scraping, data pipelines</span>
+            <span>and monitoring.</span>
+          </p>
+          <p class="intro">
+            Data and software engineer with hands-on experience building ML and
+            AI projects.
+          </p>
+
+          <nav aria-label="Sections">
+            <ul class="section-nav">
+              <li><a href="#about">About</a></li>
+              <li><a href="#experience">Experience</a></li>
+              <li><a href="#skills">Skills</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <ul class="social social-sidebar" aria-label="Profiles">
           <li>
             <a
+              class="social-linkedin"
               href="https://www.linkedin.com/in/akshar-goyal/"
               target="_blank"
               rel="noopener"
-              >LinkedIn</a
+              aria-label="LinkedIn"
             >
+              <svg aria-hidden="true" focusable="false">
+                <use href="#icon-linkedin" />
+              </svg>
+            </a>
           </li>
           <li>
             <a
+              class="social-github"
               href="https://github.com/AksharGoyal"
               target="_blank"
               rel="noopener"
-              >GitHub</a
+              aria-label="GitHub"
             >
+              <svg aria-hidden="true" focusable="false">
+                <use href="#icon-github" />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a
+              class="social-twitter"
+              href="https://x.com/AksharGoyal"
+              target="_blank"
+              rel="noopener"
+              aria-label="X (Twitter)"
+            >
+              <svg aria-hidden="true" focusable="false">
+                <use href="#icon-twitter" />
+              </svg>
+            </a>
           </li>
         </ul>
-      </div>
+      </header>
 
-      <section class="about" aria-labelledby="about">
-        <h2 id="about">About</h2>
-        <p>
-          I'm a data engineer at Adeptmind. Most of my work is building and
-          maintaining scrapers that collect product and stock data from retailer
-          websites, in Python, TypeScript and Go.
-        </p>
-        <p>
-          Lately that has meant fixing stale stock data, cutting down noisy
-          alerts, making scrapers more reliable, and clearing security issues
-          ahead of our SOC 2 audit.
-        </p>
-        <p>
-          I studied statistics at the University of Waterloo and have built ML
-          and LLM projects on the side. I use AI tools when I code, and I review
-          every change before I push it.
-        </p>
-      </section>
-    </main>
-    <footer><p>© 2026 Akshar Goyal</p></footer>
+      <main id="main">
+        <section id="about" aria-labelledby="about-title">
+          <h2 id="about-title">About</h2>
+          <p>
+            At Adeptmind I build and maintain scrapers that collect product and
+            stock data from retailer websites, in Python, TypeScript and Go.
+            Lately that has meant fixing stale stock data, cutting down noisy
+            alerts, making scrapers more reliable, and clearing security issues
+            ahead of our SOC 2 audit.
+          </p>
+          <p>
+            I studied statistics at the University of Waterloo and have built ML
+            and AI projects on the side. I use AI tools when I code, and I
+            review every change before I push it.
+          </p>
+        </section>
+
+        <section id="experience" aria-labelledby="experience-title">
+          <h2 id="experience-title">Experience</h2>
+          <ol class="timeline">
+            <li>
+              <details open>
+                <summary>
+                  <h3>Data Engineer</h3>
+                  <span class="meta">
+                    <span class="org">Adeptmind</span>
+                    <span class="dates"
+                      ><time datetime="2024-10">Oct 2024</time> – Present</span
+                    >
+                  </span>
+                </summary>
+
+                <ul>
+                  <li>
+                    Raised message-queue (RabbitMQ) throughput from about 0.2 to
+                    at least 5 messages a second by switching to push-based
+                    delivery with message expiry, so stock data stays fresh.
+                  </li>
+                  <li>
+                    Cleared 255 open dependency vulnerability alerts (111
+                    high-severity) across 6 repositories, then added weekly
+                    checks, Trivy image scanning that blocks releases with
+                    fixable critical issues, and secure storage for hardcoded
+                    secrets, as part of SOC 2 work.
+                  </li>
+                  <li>
+                    Cut monitoring alerts from 100+ to an average of 3 firing a
+                    day for a team OKR, by fixing faulty alert queries and
+                    tuning thresholds.
+                  </li>
+                  <li>
+                    Built and maintained scrapers that collect data from mall
+                    and retailer websites, taking each from setup through
+                    testing to production and fixing them when sites change.
+                  </li>
+                  <li>
+                    Built reusable retailer-onboarding components, and GitHub
+                    Actions automation to run, retry and cancel data pipelines
+                    (Prefect) safely.
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li>
+              <details>
+                <summary>
+                  <h3>Community Member (Volunteer)</h3>
+                  <span class="meta">
+                    <span class="org">StackUp</span>
+                    <span class="dates"
+                      ><time datetime="2024-02">Feb 2024</time> –
+                      <time datetime="2025-06">Jun 2025</time></span
+                    >
+                  </span>
+                </summary>
+
+                <ul>
+                  <li>
+                    Boosted community engagement by organizing and hosting
+                    workshops, quizzes and game nights for over 60,000 members.
+                  </li>
+                  <li>
+                    Suggested platform improvements that led to a better user
+                    experience and more positive feedback.
+                  </li>
+                  <li>
+                    Placed in the top 10 in multiple data science and web
+                    development challenges.
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li>
+              <details>
+                <summary>
+                  <h3>Software Engineer (Internship)</h3>
+                  <span class="meta">
+                    <span class="org">Azure Knowledge Corporation</span>
+                    <span class="dates"
+                      ><time datetime="2023-05">May 2023</time> –
+                      <time datetime="2023-07">Jul 2023</time></span
+                    >
+                  </span>
+                </summary>
+
+                <ul>
+                  <li>
+                    Built interactive Plotly.js charts for a retail platform, so
+                    users could explore sales data more easily.
+                  </li>
+                  <li>
+                    Created SQL views that gave analysts easier access to data
+                    and saved about 2 hours of manual work a week.
+                  </li>
+                  <li>
+                    Worked across frontend, backend, database schema and
+                    deployment.
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li>
+              <details>
+                <summary>
+                  <h3>Salesforce Effectiveness and Data Analyst (Co-op)</h3>
+                  <span class="meta">
+                    <span class="org">Abbott</span>
+                    <span class="dates"
+                      ><time datetime="2022-05">May 2022</time> –
+                      <time datetime="2022-08">Aug 2022</time></span
+                    >
+                  </span>
+                </summary>
+
+                <ul>
+                  <li>
+                    Automated monthly KPI reporting with Python, doubling report
+                    generation speed.
+                  </li>
+                  <li>
+                    Kept Salesforce customer records accurate by integrating
+                    data between the CRM and third-party tools and removing
+                    duplicates, improving data accuracy by 80%.
+                  </li>
+                  <li>
+                    Analyzed how sales representatives' activities related to
+                    their performance, and reported progress by territory and
+                    program using Excel and Python.
+                  </li>
+                  <li>
+                    Received the Mid Co-op Term and End of Term awards for
+                    automating reports and keeping customer records clean.
+                  </li>
+                </ul>
+              </details>
+            </li>
+          </ol>
+        </section>
+
+        <section id="education" aria-labelledby="education-title">
+          <h2 id="education-title">Education</h2>
+          <p>
+            B.Math, Honours Statistics, with a minor in Computational
+            Mathematics, University of Waterloo, with distinction.
+            <time datetime="2022-12">Dec 2022</time>.
+          </p>
+        </section>
+
+        <section id="skills" aria-labelledby="skills-title">
+          <h2 id="skills-title">Skills</h2>
+          <dl class="skill-groups">
+            <div>
+              <dt>Languages</dt>
+              <dd>
+                <ul class="chips">
+                  <li>Python</li>
+                  <li>TypeScript</li>
+                  <li>Go</li>
+                  <li>SQL</li>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                </ul>
+              </dd>
+            </div>
+            <div>
+              <dt>Data and pipelines</dt>
+              <dd>
+                <ul class="chips">
+                  <li>RabbitMQ</li>
+                  <li>Prefect</li>
+                  <li>Web scraping</li>
+                  <li>Plotly</li>
+                </ul>
+              </dd>
+            </div>
+            <div>
+              <dt>Security and delivery</dt>
+              <dd>
+                <ul class="chips">
+                  <li>GitHub Actions</li>
+                  <li>Trivy</li>
+                  <li>Dependabot</li>
+                  <li>SOC 2</li>
+                </ul>
+              </dd>
+            </div>
+            <div>
+              <dt>Analytics</dt>
+              <dd>
+                <ul class="chips">
+                  <li>Excel</li>
+                  <li>Salesforce</li>
+                  <li>KPI reporting</li>
+                </ul>
+              </dd>
+            </div>
+          </dl>
+        </section>
+      </main>
+
+      <footer>
+        <ul class="social social-footer" aria-label="Profiles">
+          <li>
+            <a
+              class="social-linkedin"
+              href="https://www.linkedin.com/in/akshar-goyal/"
+              target="_blank"
+              rel="noopener"
+              aria-label="LinkedIn"
+            >
+              <svg aria-hidden="true" focusable="false">
+                <use href="#icon-linkedin" />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a
+              class="social-github"
+              href="https://github.com/AksharGoyal"
+              target="_blank"
+              rel="noopener"
+              aria-label="GitHub"
+            >
+              <svg aria-hidden="true" focusable="false">
+                <use href="#icon-github" />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a
+              class="social-twitter"
+              href="https://x.com/AksharGoyal"
+              target="_blank"
+              rel="noopener"
+              aria-label="X (Twitter)"
+            >
+              <svg aria-hidden="true" focusable="false">
+                <use href="#icon-twitter" />
+              </svg>
+            </a>
+          </li>
+        </ul>
+        <p>© 2026 Akshar Goyal. Built with plain HTML and CSS.</p>
+      </footer>
+    </div>
   </body>
 </html>

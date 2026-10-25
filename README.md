@@ -19,16 +19,13 @@ Serve the folder with any static server, for example:
 python3 -m http.server 8000
 ```
 
-Then open http://localhost:8000. Opening `index.html` directly also works,
-but root-relative links such as `/experience/` will not resolve over `file://`.
+Then open http://localhost:8000. Opening `index.html` directly also works, since
+all paths are relative.
 
 ## Structure
 
 ```
-index.html      Home
-experience/     Experience timeline
-projects/       Projects
-contact/        Contact links
+index.html      Single page: intro, about, experience, education, skills
 css/            Design tokens and styles
 assets/         Images
 resources/      Learning notes and a glossary
