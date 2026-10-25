@@ -1,0 +1,25 @@
+{
+  "name": "akshargoyal.github.io",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "serve": "python3 -m http.server 8000",
+    "format": "prettier --write .",
+    "format:check": "prettier --check index.html css scripts package.json",
+    "lint:html": "html-validate index.html",
+    "lint:css": "stylelint \"css/*.css\"",
+    "a11y": "node scripts/a11y.mjs",
+    "check": "npm run format:check && npm run lint:html && npm run lint:css"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.14.0",
+    "html-validate": "11.17.0",
+    "playwright": "1.64.1",
+    "prettier": "3.9.10",
+    "stylelint": "17.16.0",
+    "stylelint-config-standard": "40.0.0"
+  }
+}

@@ -7,9 +7,9 @@ Personal portfolio: who I am, the data engineering work I have done, and the pro
 
 ## Approach
 
-Plain HTML and CSS with a little JavaScript. No framework and no build step, so
-the pages are fast, accessible and easy to read. Tooling such as linting,
-tests and CI will be added as the site grows.
+Plain HTML and CSS, with no JavaScript, framework or build step, so the page is
+fast, accessible and easy to read. Tooling only checks the code; nothing is
+compiled.
 
 ## Run locally
 
@@ -25,11 +25,24 @@ all paths are relative.
 ## Structure
 
 ```
-index.html      Single page: intro, about, experience, education, skills
+index.html      Single page: intro, about, experience, projects, education, skills
 css/            Design tokens and styles
-assets/         Images
+assets/         Favicon and self-hosted font
+scripts/        Accessibility check (axe-core through Playwright)
+.github/        Quality-checks workflow and Dependabot config
 resources/      Learning notes and a glossary
 ```
+
+## Checks
+
+```bash
+npm ci
+npm run check   # Prettier, html-validate, stylelint
+npm run a11y    # axe-core in Chromium: light and dark, desktop and mobile
+```
+
+`npm run a11y` needs a browser once: `npx playwright install chromium`. CI runs
+the same checks on every pull request (the "Quality checks" workflow).
 
 ## Resources
 
