@@ -587,6 +587,24 @@ footer p {
   }
 }
 
+/* Projects */
+.project h3 {
+  margin: 0 0 var(--space-2);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--color-heading);
+}
+
+.project .chips {
+  margin-block: var(--space-3);
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
 /* Skills */
 .skill-groups {
   display: grid;
@@ -639,16 +657,30 @@ footer p {
   margin: 0;
   padding: 0 0 0 var(--space-4);
   list-style: none;
+
+  --timeline-x: 0px;
+  --cap-size: 0.625rem;
 }
 
 .timeline::before {
   content: "";
   position: absolute;
-  inset-block: 0;
-  left: 0;
+  inset-block: 0 calc(var(--cap-size) / 2);
+  left: var(--timeline-x);
   width: var(--line-width);
   background: var(--color-muted);
   transform-origin: top;
+}
+
+.timeline::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: calc(var(--timeline-x) + var(--line-width) / 2 - var(--cap-size) / 2);
+  width: var(--cap-size);
+  height: var(--cap-size);
+  border: var(--line-width) solid var(--color-muted);
+  border-radius: 50%;
 }
 
 .timeline > li {
@@ -770,10 +802,8 @@ footer p {
 @media (min-width: 72rem) {
   .timeline {
     padding: 0;
-  }
 
-  .timeline::before {
-    left: calc(
+    --timeline-x: calc(
       var(--timeline-date-width) + var(--space-6) / 2 - var(--line-width) / 2
     );
   }
@@ -850,7 +880,7 @@ footer p {
     .timeline::before {
       animation: timeline-draw linear both;
       animation-timeline: view();
-      animation-range: cover 0% cover 65%;
+      animation-range: cover 0% cover 35%;
     }
 
     .timeline > li {
