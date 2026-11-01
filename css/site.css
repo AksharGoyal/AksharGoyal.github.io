@@ -757,11 +757,13 @@ footer p {
   display: block;
   margin: 0 0 var(--space-2);
   font-size: var(--text-sm);
-  color: var(--color-muted);
+  color: var(--color-timeline-meta);
 }
 
 .timeline .org {
   color: var(--color-text);
+  font-size: var(--text-md);
+  font-weight: 600;
 }
 
 .timeline .org::after {
