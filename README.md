@@ -27,7 +27,7 @@ index.html      Single page: intro, about, experience, projects, education, skil
 css/            Design tokens and styles
 assets/         Favicon, link-preview image and self-hosted font
 scripts/        Accessibility check and the link-preview image generator
-.github/        Quality-checks workflow and Dependabot config
+.github/        Quality-checks and Pages deploy workflows, Dependabot config
 package.json    Dev tooling only (Prettier, html-validate, stylelint, axe, Playwright)
 resources/      Learning notes and a glossary
 ```
@@ -46,17 +46,23 @@ the same checks on every pull request (the "Quality checks" workflow).
 ## Link-preview image
 
 `assets/og-image.jpg` (1200x630) is generated from `scripts/og-image.html`, which
-reuses the site's design tokens. After changing the tagline or palette, run:
+reuses the site's design tokens. The name, tagline and domain are read from
+`index.html`. After changing any of them or the palette, run:
 
 ```bash
-node scripts/og-image.mjs
+npm run og
 ```
+
+## Deployment
+
+The "Deploy to GitHub Pages" workflow publishes only `index.html`, `css/` and
+`assets/` on every push to `main`. Tooling, scripts and `resources/` are not served.
 
 ## Resources
 
 `resources/` holds a glossary of software and data engineering terms, grouped by
 topic (frontend, networking, security, data engineering and engineering
-practices), and a list of frontend learning resources. Start at
+practices), plus a frontend reading list. Start at
 [`resources/glossary/README.md`](resources/glossary/README.md).
 
 ## Standards
