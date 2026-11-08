@@ -1,6 +1,6 @@
 import { createServer } from "node:http";
 import { readFile } from "node:fs/promises";
-import { extname, join, normalize } from "node:path";
+import { extname, resolve, sep } from "node:path";
 import { chromium } from "playwright";
 import AxeBuilder from "@axe-core/playwright";
 
@@ -28,16 +28,18 @@ const schemes = ["light", "dark"];
 const server = createServer(async (req, res) => {
   const path = req.url === "/" ? "/index.html" : req.url.split("?")[0];
   try {
-    const file = await readFile(join(root, normalize(path)));
+    const file = resolve(root, "." + path);
+    if (!file.startsWith(root + sep)) return res.writeHead(403).end();
+    const body = await readFile(file);
     res.writeHead(200, {
       "Content-Type": types[extname(path)] ?? "application/octet-stream",
     });
-    res.end(file);
+    res.end(body);
   } catch {
     res.writeHead(404).end();
   }
 });
-await new Promise((resolve) => server.listen(0, resolve));
+await new Promise((ready) => server.listen(0, ready));
 const { port } = server.address();
 
 const browser = await chromium.launch();
