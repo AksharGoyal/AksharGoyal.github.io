@@ -9,6 +9,7 @@ Short definitions of software and data engineering terms. Each entry has a defin
 ## Engineering
 
 - [Engineering practices](engineering/practices.md)
+- [GitHub Actions](engineering/github-actions.md)
 
 ## Frontend
 
@@ -16,6 +17,7 @@ Short definitions of software and data engineering terms. Each entry has a defin
 - [Browser support](frontend/browser-support.md)
 - [CSS](frontend/css.md)
 - [HTML](frontend/html.md)
+- [Learning resources](frontend/learning-resources.md) (a reading list, not glossary terms)
 - [Naming conventions](frontend/naming-conventions.md)
 - [Performance](frontend/performance.md)
 - [Rendering strategies](frontend/rendering-strategies.md)
