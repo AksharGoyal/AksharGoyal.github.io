@@ -12,6 +12,7 @@
     "lint:html": "html-validate index.html",
     "lint:css": "stylelint \"css/*.css\"",
     "a11y": "node scripts/a11y.mjs",
+    "og": "node scripts/og-image.mjs",
     "check": "npm run format:check && npm run lint:html && npm run lint:css"
   },
   "devDependencies": {
