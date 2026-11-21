@@ -19,6 +19,7 @@ const tags = [
   "wcag22aa",
   "best-practice",
 ];
+
 const viewports = [
   { name: "desktop", width: 1280, height: 800 },
   { name: "mobile", width: 375, height: 812 },
@@ -45,26 +46,39 @@ const { port } = server.address();
 const browser = await chromium.launch();
 let failed = false;
 
-for (const { name, ...size } of viewports) {
-  for (const colorScheme of schemes) {
-    const context = await browser.newContext({ viewport: size, colorScheme });
-    const page = await context.newPage();
-    await page.goto(`http://localhost:${port}/`);
-    // Let the open role's fade-in finish so axe reads settled colours
-    await page.waitForTimeout(500);
-    const { violations } = await new AxeBuilder({ page })
-      .withTags(tags)
-      .analyze();
-    console.log(`${name} ${colorScheme}: ${violations.length} violation(s)`);
-    for (const v of violations) {
-      failed = true;
-      console.log(`  ${v.id} (${v.impact}): ${v.help}`);
-      for (const node of v.nodes) console.log(`    ${node.target.join(" ")}`);
+try {
+  for (const { name, ...size } of viewports) {
+    for (const colorScheme of schemes) {
+      const label = `${name} ${colorScheme}`;
+      const context = await browser.newContext({ viewport: size, colorScheme });
+      const page = await context.newPage();
+      const response = await page.goto(`http://localhost:${port}/`);
+      if (!response?.ok()) {
+        throw new Error(
+          `${label}: page failed to load (${response?.status()})`,
+        );
+      }
+      const headings = await page.locator("h1").allTextContents();
+      if (!headings.join("").trim()) {
+        throw new Error(`${label}: page rendered without a heading`);
+      }
+      // Let the open role's fade-in finish so axe reads settled colours
+      await page.waitForTimeout(500);
+      const { violations } = await new AxeBuilder({ page })
+        .withTags(tags)
+        .analyze();
+      console.log(`${label}: ${violations.length} violation(s)`);
+      for (const v of violations) {
+        failed = true;
+        console.log(`  ${v.id} (${v.impact}): ${v.help}`);
+        for (const node of v.nodes) console.log(`    ${node.target.join(" ")}`);
+      }
+      await context.close();
     }
-    await context.close();
   }
+} finally {
+  await browser.close();
+  server.close();
 }
 
-await browser.close();
-server.close();
 process.exit(failed ? 1 : 0);
