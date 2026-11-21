@@ -44,3 +44,15 @@
 
 - **Client-side auth checks are UX, not security** — hiding a button is cosmetic; the server must enforce every rule.
   **Seen in:** DevTools → delete the `disabled` attribute or the `display:none` on an admin button. If the API then obeys you, the backend is broken.
+
+- **Path traversal (CWE-22)** — input like `/../../etc/passwd` escapes the folder a server meant to expose. `normalize` alone doesn't stop it. Resolve the final path, then check it still starts with the allowed root.
+  **Seen in:** the static server in `scripts/a11y.mjs` (`resolve`, then a `startsWith` guard returning 403).
+
+- **Prefix confusion** — checking `path.startsWith("/repo")` also accepts `/repo-secrets`. Compare against the root plus a separator (`root + sep`) so only real children match.
+  **Seen in:** `file.startsWith(root + sep)` in `a11y.mjs`.
+
+- **Code scanning (SAST / CodeQL)** — static analysis that reads source without running it and flags dangerous data flows, such as user input reaching a file read. Results appear in the repo's Security tab. It reasons about possible flows, so you fix a finding or dismiss it with a reason.
+  **Seen in:** the repo's Security → Code scanning page; alert `js/path-injection` led to the fix above.
+
+- **Supply-chain attack** — compromising something you depend on (a package, an action, a tag) instead of your own code. Mitigations: pin versions or commit SHAs, keep dependencies few, review updates.
+  **Seen in:** SHA-pinned `uses:` lines in `.github/workflows/`; Dependabot PRs.

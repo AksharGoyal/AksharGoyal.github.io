@@ -10,6 +10,7 @@ Short definitions of software and data engineering terms. Each entry has a defin
 
 - [Engineering practices](engineering/practices.md)
 - [GitHub Actions](engineering/github-actions.md)
+- [Testing](engineering/testing.md)
 
 ## Frontend
 
@@ -22,6 +23,10 @@ Short definitions of software and data engineering terms. Each entry has a defin
 - [Performance](frontend/performance.md)
 - [Rendering strategies](frontend/rendering-strategies.md)
 - [SEO](frontend/seo.md)
+
+## JavaScript
+
+- [JavaScript basics](javascript/javascript-basics.md)
 
 ## Networking
 

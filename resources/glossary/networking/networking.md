@@ -50,3 +50,15 @@
 
 - **WebSocket vs SSE (Server-Sent Events) vs polling** — bidirectional persistent connection / one-way server→client stream / repeated requests.
   **Seen in:** DevTools Network → "WS" filter. Open Slack or Discord and watch frames stream live.
+
+- **Ephemeral port (`listen(0)`)** — asking the operating system to pick any free port instead of hard-coding one. It avoids "address already in use" clashes. The program must then ask the server which port it got.
+  **Seen in:** `scripts/a11y.mjs` starts its test server with `server.listen(0)` and reads the port from `server.address()`.
+
+- **HTTP status codes** — a three-digit result on every response: `2xx` success (`200 OK`), `3xx` redirect, `4xx` the client's fault (`403 Forbidden`, `404 Not Found`), `5xx` the server's fault. Code, not page text, tells software what happened.
+  **Seen in:** DevTools → Network → the Status column; the a11y server returns 403 and 404 itself.
+
+- **`Content-Type` (MIME type)** — a response header naming the kind of data (`text/html`, `text/css`, `image/svg+xml`) so the browser knows how to treat it. A wrong type can make a stylesheet or font silently ignored.
+  **Seen in:** the `types` map in `scripts/a11y.mjs`.
+
+- **Static file server** — a server that just returns files from a folder, with no logic. GitHub Pages is one; `python3 -m http.server` is a tiny one.
+  **Seen in:** `npm run serve`.
