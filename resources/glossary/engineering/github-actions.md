@@ -47,3 +47,9 @@
 
 - **Required status check** — a check a branch ruleset says must pass before a PR can merge. Without it, a red CI run doesn't stop a merge.
   **Seen in:** the ruleset on `main` ("Quality checks / lint" and "accessibility").
+
+- **Path filters (`paths:`)** — under `push` or `pull_request`, limits a workflow to changes that touch the listed files or globs (`css/**`). A change that matches nothing starts no run, which saves runner minutes. List the workflow file itself so editing it still triggers it.
+  **Seen in:** the Pages deploy runs only when `index.html`, `css/`, `assets/` or its own file change, so docs and tooling edits don't redeploy the site.
+
+- **Skipped required checks** — if a workflow is path-filtered and a PR changes none of its paths, no check is reported. A required check that never reports stays "pending" and blocks the merge. Filter workflows that are not required, or keep the required one unfiltered.
+  **Seen in:** "Quality checks" runs on every PR because it is a required check; only the deploy workflow is path-filtered.

@@ -28,7 +28,7 @@
   **Seen in:** `a11y.mjs` loops viewports × colour schemes; the cross-browser change adds a third axis, the browser.
 
 - **Fixed sleep** — pausing for a set time (`waitForTimeout(500)`) instead of waiting for a condition. It is too slow when the page is ready early and too fast on a slow machine, which makes tests flaky. Prefer waiting for something observable, such as an element or a finished animation.
-  **Seen in:** the 500 ms wait before axe runs in `a11y.mjs`.
+  **Seen in:** `a11y.mjs` once waited 500 ms before axe ran; the fix was to remove the animations from the audit instead of waiting longer.
 
 - **Cartesian product** — every combination of items from several lists, so 2 viewports × 2 colour schemes gives 4 runs. A test matrix is a cartesian product written as data.
   **Seen in:** the viewport, colour-scheme and browser runs in `a11y.mjs`.
@@ -38,3 +38,9 @@
 
 - **Arrange / Act / Assert** — the shape of a good test: set up inputs, perform the one action under test, then check the result.
   **Seen in:** any test function in `tests/`.
+
+- **Make the failure explain itself** — when a check fails, print the evidence (values, selectors, reasons), not only pass or fail. A guess costs a CI round per theory; the data names the cause.
+  **Seen in:** `a11y.mjs` logs each failing node's foreground colour, background colour and contrast ratio.
+
+- **Deterministic test setup** — remove sources of variation (timing, animation, pointer position, randomness) from the test, so the same input always gives the same result. Settle the state rather than waiting for it.
+  **Seen in:** the audit runs with `reducedMotion: "reduce"`, so animations never start and axe reads the final colours.
