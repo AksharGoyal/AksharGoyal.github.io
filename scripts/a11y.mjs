@@ -47,7 +47,11 @@ const { port } = server.address();
 const url = `http://localhost:${port}/`;
 
 async function audit(browser, label, size, colorScheme) {
-  const context = await browser.newContext({ viewport: size, colorScheme });
+  const context = await browser.newContext({
+    viewport: size,
+    colorScheme,
+    reducedMotion: "reduce",
+  });
   const page = await context.newPage();
   const response = await page.goto(url);
   if (!response?.ok()) {
@@ -57,10 +61,6 @@ async function audit(browser, label, size, colorScheme) {
   if (!headings.join("").trim()) {
     throw new Error(`${label}: page rendered without a heading`);
   }
-  await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
-  await page.evaluate(() => window.scrollTo(0, 0));
-  // Let the fade-ins and scroll reveals finish so axe reads settled colours
-  await page.waitForTimeout(500);
   const { violations } = await new AxeBuilder({ page })
     .withTags(tags)
     .analyze();
