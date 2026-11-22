@@ -856,7 +856,7 @@ footer p {
 @media (hover: hover) {
   .timeline:hover > li:not(:hover) > details,
   .timeline:hover > li:not(:hover)::before {
-    opacity: 0.6;
+    opacity: 0.75;
   }
 }
 
