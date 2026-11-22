@@ -65,7 +65,12 @@ async function audit(browser, label, size, colorScheme) {
   console.log(`${label}: ${violations.length} violation(s)`);
   for (const v of violations) {
     console.log(`  ${v.id} (${v.impact}): ${v.help}`);
-    for (const node of v.nodes) console.log(`    ${node.target.join(" ")}`);
+    for (const node of v.nodes) {
+      console.log(`    ${node.target.join(" ")}`);
+      for (const check of node.any) {
+        console.log(`      ${check.message} ${JSON.stringify(check.data)}`);
+      }
+    }
   }
   await context.close();
   return violations;
