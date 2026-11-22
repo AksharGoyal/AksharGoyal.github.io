@@ -20,3 +20,12 @@
 
 - **Shift left** — catch problems earlier in the pipeline (editor, then commit, then CI, then production) because they are cheaper to fix there.
   **Seen in:** a formatter on save, a linter on commit and tests on every pull request.
+
+- **Single responsibility principle (SRP)** — a function or module should do one job and have one reason to change. A function that starts a server, launches a browser, checks the page and prints results has four reasons to change.
+  **Seen in:** `a11y.mjs` can split "audit one page" into its own function.
+
+- **Cognitive complexity / arrow code** — the more nested loops and `if`s a block has, the more it pushes right and the harder it is to hold in your head. Cure it with early returns (guard clauses) and by extracting a named function for the inner block.
+  **Seen in:** the viewport × scheme loop nested inside the browser loop in `a11y.mjs`.
+
+- **Resource leak** — acquiring something (a browser process, a server, a file handle) and never releasing it. Pair every acquire with a release that always runs, such as `finally`.
+  **Seen in:** `browser.close()` in the `finally` of `a11y.mjs`.

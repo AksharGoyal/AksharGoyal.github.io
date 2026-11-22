@@ -23,3 +23,12 @@
 
 - **Fail fast** — stop at the first broken precondition with a clear message, instead of producing confusing results later.
   **Seen in:** `a11y.mjs` throws `desktop light: page failed to load (404)` before running axe.
+
+- **Test matrix** — running the same test across a grid of conditions (browser × screen size × colour scheme). The number of runs multiplies, so keep each axis to what could really differ.
+  **Seen in:** `a11y.mjs` loops viewports × colour schemes; the cross-browser change adds a third axis, the browser.
+
+- **Fixed sleep** — pausing for a set time (`waitForTimeout(500)`) instead of waiting for a condition. It is too slow when the page is ready early and too fast on a slow machine, which makes tests flaky. Prefer waiting for something observable, such as an element or a finished animation.
+  **Seen in:** the 500 ms wait before axe runs in `a11y.mjs`.
+
+- **Cartesian product** — every combination of items from several lists, so 2 viewports × 2 colour schemes gives 4 runs. A test matrix is a cartesian product written as data.
+  **Seen in:** the viewport, colour-scheme and browser runs in `a11y.mjs`.
