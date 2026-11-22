@@ -62,3 +62,15 @@
 
 - **Static file server** — a server that just returns files from a folder, with no logic. GitHub Pages is one; `python3 -m http.server` is a tiny one.
   **Seen in:** `npm run serve`.
+
+- **Socket** — the operating system's endpoint for network communication. A program asks the OS to listen on an address and port such as `127.0.0.1:8000`, and the OS hands it each incoming connection as a stream of bytes. Think of a phone line: it only carries bytes.
+  **Seen in:** the "Uvicorn running on http://127.0.0.1:8000" line when a dev server starts.
+
+- **Web server vs framework** — a server listens on a socket, parses raw bytes into a method, path and headers, hands them to your code, and writes the response back. A framework decides what your code runs for each request: routing, validation, JSON. A server knows nothing about your routes, and a framework never touches a socket.
+  **Seen in:** uvicorn (server) running a FastAPI app (framework).
+
+- **ASGI (Asynchronous Server Gateway Interface)** — the Python standard for how a server calls an app, so any ASGI server can run any ASGI app. "Asynchronous" lets one process serve many connections while waiting on slow work. WSGI is the older, synchronous version used by classic Flask and Django.
+  **Seen in:** `uvicorn shortlink_api.main:app`.
+
+- **301 vs 302 redirect** — `301` means moved permanently and browsers cache it, so later visits may skip your server. `302` means temporary, so every visit reaches your server. Choose `302` to count clicks or change the target later.
+  **Seen in:** DevTools → Network → Status column on a short-link click.

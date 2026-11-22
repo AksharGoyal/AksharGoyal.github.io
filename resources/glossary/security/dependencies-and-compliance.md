@@ -11,3 +11,12 @@
 
 - **SOC 2** — an auditing framework in which an independent auditor reports on a service company's controls for security and related criteria such as availability and confidentiality. It is an auditor's report, not a certificate. Typical controls include access control, change management, vulnerability management and security training.
   **Seen in:** the "Security" or "Trust" page on a SaaS vendor's website.
+
+- **Constraint vs lockfile** — a constraint in `pyproject.toml` (`fastapi>=0.165.0`) says which versions you accept. A lockfile (`uv.lock`) records the exact versions installed, including indirect ones. Commit both, and install from the lockfile in CI. A universal lockfile adds `resolution-markers` where dependencies differ by Python version.
+  **Seen in:** `pyproject.toml` and `uv.lock` in shortlink-api; `uv sync --locked`.
+
+- **Extra (optional dependency)** — a named bundle of optional dependencies, installed with `package[extra]`. `fastapi[standard]` adds the server, CLI and common helpers that plain `fastapi` leaves out. Convenient, but it installs more code you must keep patched.
+  **Seen in:** `uv tree --depth 1` before and after adding `fastapi[standard]`.
+
+- **Dependency group (PEP 735)** — a named set of dependencies kept out of the published package, declared in `[dependency-groups]`. It keeps tools such as `pytest` and `ruff` out of what users install.
+  **Seen in:** the `dev` group in `pyproject.toml`.

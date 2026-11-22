@@ -32,3 +32,9 @@
 
 - **Cartesian product** — every combination of items from several lists, so 2 viewports × 2 colour schemes gives 4 runs. A test matrix is a cartesian product written as data.
   **Seen in:** the viewport, colour-scheme and browser runs in `a11y.mjs`.
+
+- **TDD (test-driven development)** — write a failing test first (red), write the smallest code that passes (green), then clean up (refactor). Watching it fail first proves the test can fail.
+  **Seen in:** `tests/test_health.py` in shortlink-api, written before `main.py`.
+
+- **Arrange / Act / Assert** — the shape of a good test: set up inputs, perform the one action under test, then check the result.
+  **Seen in:** any test function in `tests/`.

@@ -5,11 +5,14 @@ Short definitions of software and data engineering terms. Each entry has a defin
 ## Data engineering
 
 - [Message queues](data-engineering/message-queues.md)
+- [Reliable processing](data-engineering/reliable-processing.md)
 
 ## Engineering
 
+- [API design](engineering/api-design.md)
 - [Engineering practices](engineering/practices.md)
 - [GitHub Actions](engineering/github-actions.md)
+- [Releases and versioning](engineering/releases.md)
 - [Testing](engineering/testing.md)
 
 ## Frontend
