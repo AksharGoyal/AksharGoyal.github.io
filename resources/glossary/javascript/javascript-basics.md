@@ -28,7 +28,13 @@
   **Seen in:** a callback parameter named `resolve` hiding the imported `resolve` (renamed to `ready`).
 
 - **`try` / `catch` / `finally`** — `catch` handles an error; `finally` runs whether or not one happened. Use `finally` for cleanup (closing a browser or server) that must always run.
-  **Seen in:** the `finally` block in `a11y.mjs` closes the browser and server even if a guard throws.
+  **Seen in:** the `finally` block in `a11y.mjs` closes each browser even if a guard throws.
 
 - **Regular expression (regex)** — a pattern for matching text. `/\s+/g` means "one or more whitespace characters, everywhere", which collapses indentation and newlines into single spaces.
   **Seen in:** `.replace(/\s+/g, " ")` in `og-image.mjs`.
+
+- **`process.exit()` vs `process.exitCode`** — `process.exit(1)` stops Node immediately, even if output is still being written. Setting `process.exitCode = 1` lets Node finish pending work and then exit with that code. Prefer `exitCode` when everything is already cleaned up.
+  **Seen in:** the last line of `a11y.mjs`.
+
+- **`flatMap`** — `map` followed by flattening one level. Use it when each item turns into several items and you want one flat list, not a list of lists.
+  **Seen in:** building every viewport and colour-scheme pair for `a11y.mjs`.

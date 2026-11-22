@@ -37,10 +37,10 @@ resources/      Learning notes and a glossary
 ```bash
 npm ci
 npm run check   # Prettier, html-validate, stylelint
-npm run a11y    # axe-core in Chromium: light and dark, desktop and mobile
+npm run a11y    # axe-core in Chromium, Firefox and WebKit: light and dark, desktop and mobile
 ```
 
-`npm run a11y` needs a browser once: `npx playwright install chromium`. CI runs
+`npm run a11y` needs a browser once: `npx playwright install chromium firefox webkit`. CI runs
 the same checks on every pull request (the "Quality checks" workflow).
 
 ## Link-preview image
@@ -73,4 +73,5 @@ Goals, with what has been verified so far:
   at desktop and mobile widths. The animations have no pause control
   (WCAG 2.2.2), and there has been no screen-reader or Lighthouse pass yet.
 - Mobile-first and responsive: checked at 375px and 1280px.
-- Works in current Chrome, Safari and Firefox: only Chromium is tested so far.
+- Works in current Chrome, Safari and Firefox: the axe audit runs in Chromium,
+  Firefox and WebKit (Safari's engine). It has not been run in real Safari.
