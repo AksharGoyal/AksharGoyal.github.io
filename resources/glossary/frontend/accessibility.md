@@ -53,3 +53,6 @@
 
 - **Flashing and seizure safety (WCAG 2.3.1)** — content must not flash more than three times in any one second, unless the flashes are small and low in contrast. Rapid flicker can trigger seizures. Keep glitch and flicker effects short, small and occasional, and switch them off when `prefers-reduced-motion: reduce` is set.
   **Seen in:** WCAG 2.3.1 "Three Flashes or Below Threshold". The PEAT tool checks videos against it.
+
+- **Opacity changes contrast** — `opacity` blends text with what is behind it, so dimmed text is lighter than its colour value says. Opacities on a parent and its child multiply (0.75 × 0.65 ≈ 0.49). axe measures the blended colour, so test the dimmest state a visitor can reach.
+  **Seen in:** the timeline's hover dimming (`opacity: 0.6`) gave 4.01:1 on body text, below the 4.5:1 AA minimum. Raising it to 0.75 gave about 6.4:1.
