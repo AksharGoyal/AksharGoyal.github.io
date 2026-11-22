@@ -57,7 +57,9 @@ async function audit(browser, label, size, colorScheme) {
   if (!headings.join("").trim()) {
     throw new Error(`${label}: page rendered without a heading`);
   }
-  // Let the open role's fade-in finish so axe reads settled colours
+  await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+  await page.evaluate(() => window.scrollTo(0, 0));
+  // Let the fade-ins and scroll reveals finish so axe reads settled colours
   await page.waitForTimeout(500);
   const { violations } = await new AxeBuilder({ page })
     .withTags(tags)
