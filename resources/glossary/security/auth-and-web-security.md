@@ -56,3 +56,12 @@
 
 - **Supply-chain attack** — compromising something you depend on (a package, an action, a tag) instead of your own code. Mitigations: pin versions or commit SHAs, keep dependencies few, review updates.
   **Seen in:** SHA-pinned `uses:` lines in `.github/workflows/`; Dependabot PRs.
+
+- **SSRF (Server-Side Request Forgery)** — tricking your server into making a request for an attacker. The server sits inside a trusted network and can reach addresses the attacker cannot, such as `http://169.254.169.254/`, which serves cloud credentials. Defend by checking where a URL resolves, not just how it looks.
+  **Seen in:** the OWASP SSRF page.
+
+- **Open redirect** — a site that redirects to any user-supplied URL, letting attackers borrow your domain's trust for phishing. A link shortener is one by design, so it needs abuse controls: allow only `http` and `https`, limit length, and offer a way to report links.
+  **Seen in:** the scheme check in shortlink-api.
+
+- **Enumeration attack** — guessing predictable identifiers to read data you were not given, such as `/1`, `/2`, `/3`. Random, unguessable ids make this impractical; sequential ids make it trivial.
+  **Seen in:** the choice of short-code strategy in shortlink-api.

@@ -856,7 +856,7 @@ footer p {
 @media (hover: hover) {
   .timeline:hover > li:not(:hover) > details,
   .timeline:hover > li:not(:hover)::before {
-    opacity: 0.6;
+    opacity: 0.75;
   }
 }
 
@@ -888,7 +888,7 @@ footer p {
     .timeline > li {
       animation: timeline-reveal linear both;
       animation-timeline: view();
-      animation-range: entry 0% entry 55%;
+      animation-range: entry 0% entry 25%;
     }
 
     .timeline ul li::before {

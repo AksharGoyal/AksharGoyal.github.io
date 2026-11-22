@@ -47,7 +47,11 @@ const { port } = server.address();
 const url = `http://localhost:${port}/`;
 
 async function audit(browser, label, size, colorScheme) {
-  const context = await browser.newContext({ viewport: size, colorScheme });
+  const context = await browser.newContext({
+    viewport: size,
+    colorScheme,
+    reducedMotion: "reduce",
+  });
   const page = await context.newPage();
   const response = await page.goto(url);
   if (!response?.ok()) {
@@ -57,15 +61,18 @@ async function audit(browser, label, size, colorScheme) {
   if (!headings.join("").trim()) {
     throw new Error(`${label}: page rendered without a heading`);
   }
-  // Let the open role's fade-in finish so axe reads settled colours
-  await page.waitForTimeout(500);
   const { violations } = await new AxeBuilder({ page })
     .withTags(tags)
     .analyze();
   console.log(`${label}: ${violations.length} violation(s)`);
   for (const v of violations) {
     console.log(`  ${v.id} (${v.impact}): ${v.help}`);
-    for (const node of v.nodes) console.log(`    ${node.target.join(" ")}`);
+    for (const node of v.nodes) {
+      console.log(`    ${node.target.join(" ")}`);
+      for (const check of node.any) {
+        console.log(`      ${check.message} ${JSON.stringify(check.data)}`);
+      }
+    }
   }
   await context.close();
   return violations;
